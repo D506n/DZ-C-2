@@ -19,5 +19,22 @@ while (StepArray < step)
     Num = Num / 10;
     StepArray++;
 }
-//вывожу второе число в массиве
-    Console.Write($"Вторая цифра: {array[1]} ");
+//проверяю массив на зеркальность
+StepArray = 0;
+int Match = 0;
+int control = 0;
+while(StepArray != step & step > StepArray){
+    if (array[StepArray] == array[step-1]){
+        Match++;
+    }
+    control++;
+    StepArray++;
+    step--;
+}
+//выдаю ответ
+if (control == Match){
+    Console.WriteLine("Является палиндромом");
+}
+else{
+    Console.WriteLine("Не является палиндромом");
+}
